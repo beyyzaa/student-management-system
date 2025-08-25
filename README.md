@@ -1,4 +1,4 @@
-# student-management-system
+
 # 🎓 Öğrenci Otomasyon Sistemi
 
 Bu proje, **Django + MySQL** tabanlı geliştirilmiş bir öğrenci otomasyon sistemidir.  

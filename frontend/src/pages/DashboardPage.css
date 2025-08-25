@@ -1,0 +1,194 @@
+/* DashboardPage.css */
+
+/* Genel Renkler ve Değişkenler */
+:root {
+  --sidebar-bg: #2c3e50;
+  --main-bg: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-light: #ecf0f1;
+  --text-dark: #34495e;
+  --primary-color: #3498db;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ana Kapsayıcı ve Düzen */
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Sidebar Stilleri --- */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar nav li {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.sidebar nav li:hover {
+  background-color: var(--primary-color);
+}
+
+.sidebar nav li svg {
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.logout-btn {
+  background: none;
+  border: 1px solid var(--text-light);
+  color: var(--text-light);
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: auto; /* En alta sabitler */
+}
+
+.logout-btn:hover {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.logout-btn svg {
+  margin-right: 10px;
+}
+
+/* --- Ana İçerik --- */
+.dashboard-content {
+  flex-grow: 1;
+  background-color: var(--main-bg);
+  padding: 30px;
+  overflow-y: auto;
+  min-width: 0; 
+}
+
+.dashboard-title {
+  color: var(--text-dark);
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* --- İstatistik Kartları --- */
+/* --- İstatistik Kartları (Güncellendi) --- */
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px; /* Altına boşluk ekleyelim */
+}
+
+.stat-card {
+   background-color: var(--card-bg);
+   padding: 25px;
+   border-radius: 12px;
+   box-shadow: var(--shadow);
+   flex: 1 1 250px; /* Her kartın esnemesini ve en az 250px olmasını sağlar */
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card .icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.stat-card h3 {
+  margin: 0 0 10px 0;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.stat-card p .male {
+  color: #3498db;
+}
+
+.stat-card p .female {
+  color: #e91e63;
+}
+
+/* Yükleme ve Hata Mesajları */
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+/* Responsive Tasarım (Basit bir örnek) */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .sidebar h2 {
+    display: none; /* Mobilde başlığı gizle */
+  }
+  .sidebar nav ul {
+    display: flex;
+    gap: 10px;
+  }
+  .sidebar nav li {
+    padding: 10px;
+    margin: 0;
+  }
+  .sidebar nav li svg {
+    margin-right: 5px;
+  }
+}
